@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/task_navigation"
+    app:startDestination="@id/newTasksFragment">
+
+    <fragment
+        android:id="@+id/newTasksFragment"
+        android:name="com.example.convenientshift.ui.new_tasks.NewTasksFragment"
+        android:label="fragment_new_tasks"
+        tools:layout="@layout/fragment_new_tasks" >
+        <action
+            android:id="@+id/action_newTasksFragment_to_historyTasksFragment"
+            app:destination="@id/historyTasksFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/historyTasksFragment"
+        android:name="com.example.convenientshift.ui.history_tasks.HistoryTasksFragment"
+        android:label="fragment_history_tasks"
+        tools:layout="@layout/fragment_history_tasks" >
+        <action
+            android:id="@+id/action_historyTasksFragment_to_newTasksFragment"
+            app:destination="@id/newTasksFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>
